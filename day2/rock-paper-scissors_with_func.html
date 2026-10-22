@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK_PAPER_SCISSORS</title>
+</head>
+<body>
+    <h2>
+        Rock Paper Scissors
+    </h2>
+    
+    <button onclick="
+    const ComputerChoice=PickNumber();
+    let result = '';
+    if(ComputerChoice === 'rock'){
+        result = 'tie';
+    }
+    else if(ComputerChoice === 'paper'){
+        result = 'lose';
+    }
+    else if(ComputerChoice === 'Scissors'){
+        result = 'Win';
+    }
+    alert(`You picked Rock. Computer picked ${ComputerChoice}. ${result}.`);
+    ">Rock</button>
+    <button onclick="
+    const ComputerChoice=PickNumber();
+    if(ComputerChoice === 'rock'){
+        result = 'WIn';
+    }
+    else if(ComputerChoice === 'paper'){
+        result = 'Tie';
+    }
+    else if(ComputerChoice === 'Scissors'){
+        result = 'lose';
+    }
+    alert(`You picked Paper. Computer picked ${ComputerChoice}. ${result}.`);
+    ">Paper</button>
+    <button onclick = "
+    const ComputerChoice=PickNumber();
+    
+    if(ComputerChoice === 'rock'){
+        result = 'lose';
+    }
+    else if(ComputerChoice === 'paper'){
+        result = 'win';
+    }
+    else if(ComputerChoice === 'Scissors'){
+        result = 'Tie';
+    }
+    alert(`You picked Scissors. Computer picked ${ComputerChoice}. ${result}.`);
+    ">Scissors</button>
+   <script>
+    function PickNumber(){
+    let random_number = Math.random();
+    let ComputerChoice ='';
+    if(random_number >= 0 && random_number <1/3){
+        ComputerChoice ='rock';
+    }
+    else if(random_number >= 1/3 && random_number <2/3){
+        ComputerChoice ='paper';
+    }
+    else if(random_number >= 2/3 && random_number <1){
+        ComputerChoice ='Scissors';
+    }
+    return ComputerChoice;
+    }
+   </script>
+</body>
+</html>
