@@ -3,55 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROCK_PAPER_SCISSORS</title>
+    <title>rock_paper_scissors</title>
 </head>
 <body>
     <h2>
-        Rock Paper Scissors
+        rock paper scissors
     </h2>
     
     <button onclick="
+
+    PlayerMove('rock');
+    ">rock</button>
+
+    <button onclick="
+    PlayerMove('paper');
+    ">paper</button>
+
+    <button onclick = "
+    PlayerMove('scissors');
+    ">scissors</button>
+    
+   <script>
+    function PlayerMove(move){
     const ComputerChoice=PickNumber();
     let result = '';
-    if(ComputerChoice === 'rock'){
-        result = 'tie';
-    }
-    else if(ComputerChoice === 'paper'){
-        result = 'lose';
-    }
-    else if(ComputerChoice === 'Scissors'){
-        result = 'Win';
-    }
-    alert(`You picked Rock. Computer picked ${ComputerChoice}. ${result}.`);
-    ">Rock</button>
-    <button onclick="
-    const ComputerChoice=PickNumber();
-    if(ComputerChoice === 'rock'){
-        result = 'WIn';
-    }
-    else if(ComputerChoice === 'paper'){
-        result = 'Tie';
-    }
-    else if(ComputerChoice === 'Scissors'){
-        result = 'lose';
-    }
-    alert(`You picked Paper. Computer picked ${ComputerChoice}. ${result}.`);
-    ">Paper</button>
-    <button onclick = "
-    const ComputerChoice=PickNumber();
-    
-    if(ComputerChoice === 'rock'){
+    if(move === 'scissors'){
+        if(ComputerChoice === 'rock'){
         result = 'lose';
     }
     else if(ComputerChoice === 'paper'){
         result = 'win';
     }
-    else if(ComputerChoice === 'Scissors'){
+    else if(ComputerChoice === 'scissors'){
         result = 'Tie';
     }
-    alert(`You picked Scissors. Computer picked ${ComputerChoice}. ${result}.`);
-    ">Scissors</button>
-   <script>
+    
+    }
+    else if(move==='paper'){
+        if(ComputerChoice === 'rock'){
+        result = 'WIn';
+    }
+    else if(ComputerChoice === 'paper'){
+        result = 'Tie';
+    }
+    else if(ComputerChoice === 'scissors'){
+        result = 'lose';
+    }
+  
+    }
+    else if(move==='rock'){
+        if(ComputerChoice === 'rock'){
+        result = 'tie';
+    }
+    else if(ComputerChoice === 'paper'){
+        result = 'lose';
+    }
+    else if(ComputerChoice === 'scissors'){
+        result = 'Win';
+    }
+    
+    }
+    alert(`You picked ${move}. Computer picked ${ComputerChoice}. ${result}.`);
+    }
     function PickNumber(){
     let random_number = Math.random();
     let ComputerChoice ='';
@@ -62,10 +75,10 @@
         ComputerChoice ='paper';
     }
     else if(random_number >= 2/3 && random_number <1){
-        ComputerChoice ='Scissors';
+        ComputerChoice ='scissors';
     }
     return ComputerChoice;
-    }
+    }  
    </script>
 </body>
 </html>
