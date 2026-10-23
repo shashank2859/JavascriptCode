@@ -7,17 +7,33 @@
 </head>
 <body>
    <script>
-    const property={
-        name : "shashank",
-        number:2859
+    // const property={
+    //     name : "shashank",
+    //     number:2859
+    // };
+    // console.log(property);
+    // console.log(property.name);
+    // console.log(property.number);
+    // property.newproperty = 'jeans';
+    // console.log(property);
+    // delete property.newproperty;
+    // console.log(property);
+    const properties={
+        name:"aynan",
+        age:20,
+        ['braket-properties']:'moni',
+        fullname:{
+            fname:'shashank',
+            lname:'H'
+        },
+        fun: function message(){
+            console.log('oct '+22);
+        }
+
     };
-    console.log(property);
-    console.log(property.name);
-    console.log(property.number);
-    property.newproperty = 'jeans';
-    console.log(property);
-    delete property.newproperty;
-    console.log(property);
+    console.log(properties['braket-properties']);
+    properties.fun();
+    console.log(properties.fullname.fname);
    </script>
 </body>
 </html>
