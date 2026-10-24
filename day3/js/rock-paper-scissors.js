@@ -88,3 +88,4 @@ let score=JSON.parse(localStorage.getItem('score'))
         }
         return ComputerChoice;
         }
+        
