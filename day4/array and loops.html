@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript</title>
+    <title>array and loops</title>
 </head>
 <body>
    <script>
@@ -25,7 +25,25 @@
     //     arr2=arr[i];
     //     console.log(arr2);
     // }
-    
+    // const arr1=[1,2,3];
+    // const arr2=arr1;
+    // const arr2=arr1.slice();
+    // arr2.push(4);
+    // console.log(arr1);
+    // console.log(arr2);
+
+    function arraydouble(nums){
+        let nums2=[];
+        for(let i=0;i<nums.length;i++){
+            if(nums[i]>5){
+                nums2.push(nums[i]);
+            }
+        }
+        return nums2;
+    }
+    console.log(arraydouble([6,1,7,8,9]));
+
+
    </script>
 </body>
 </html>
