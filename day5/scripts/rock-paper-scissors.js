@@ -5,16 +5,17 @@ let score=JSON.parse(localStorage.getItem('score'))
             tie:0
 
         };
-    
-    updatescore();
+updatescore();
+
     let autoplayistrue=true;
     let intervalid;
+
     function autoplay(){
         if(!autoplayistrue){
             intervalid=setInterval(function(){
                 const interval=PickNumber()
                 PlayerMove(interval);
-            },2000)
+            },1000)
             autoplayistrue=true;
             }
         else{
@@ -22,8 +23,29 @@ let score=JSON.parse(localStorage.getItem('score'))
             autoplayistrue=false;
 
         }}
-
-        
+    document.querySelector('.js-rock-button')
+        .addEventListener('click',()=>{
+            PlayerMove('rock');  
+        })
+    document.querySelector('.js-paper-button')
+        .addEventListener('click',()=>{
+            PlayerMove('paper'); 
+        })
+    document.querySelector('.js-scissors-button')
+        .addEventListener('click',()=>{
+            PlayerMove('scissors'); 
+        })    
+    document.body.addEventListener('keydown',(event)=>{
+        if(event.key==='r'){
+            PlayerMove('rock');
+        }
+        else if(event.key==='p'){
+            PlayerMove('paper');
+        }
+        else if(event.key==='s'){
+            PlayerMove('scissors');
+        }
+    })    
     function PlayerMove(move){
 
     const ComputerChoice=PickNumber();
